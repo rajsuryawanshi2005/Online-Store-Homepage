@@ -1,54 +1,87 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background: #f5f5f5;
+  background: linear-gradient(to right, #eef2f3, #ffffff);
 }
 
 /* Header */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 15px;
-  background: #333;
+  align-items: center;
+  padding: 15px 40px;
+  background: #1f2937;
   color: white;
 }
 
+.logo {
+  margin: 0;
+}
+
+/* Wrap search + cart */
 header input {
-  padding: 8px;
-  width: 200px;
+  padding: 8px 12px;
+  width: 220px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+/* Cart */
+.cart {
+  background: #4f46e5;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-left: 15px;
 }
 
 /* Navigation */
 nav {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  background: #eee;
-  padding: 10px;
+  gap: 15px;
+  padding: 15px;
+  background: #f3f4f6;
 }
 
 nav button {
-  padding: 8px 15px;
+  padding: 8px 20px;
   border: none;
+  background: #e5e7eb;
+  border-radius: 20px;
   cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
 }
 
 nav button:hover {
-  background: #bbb;
+  background: #6366f1;
+  color: white;
 }
 
 /* Filters */
 .filters {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 /* Product Grid */
 #products {
+  max-width: 1200px;       /* center container */
+  margin: auto;            /* center horizontally */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
   padding: 20px;
 }
 
@@ -56,26 +89,69 @@ nav button:hover {
 .card {
   background: white;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* equal spacing */
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px) scale(1.03);
 }
 
+/* Image */
 .card img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: 160px;
+  object-fit: contain; /* better for products */
+  border-radius: 8px;
 }
 
+/* Title */
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  min-height: 40px; /* equal height */
+}
+
+/* Price */
+.card p {
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Button */
 .card button {
-  background: green;
+  background: #6366f1;
   color: white;
-  padding: 8px;
+  padding: 8px 12px;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.card button:hover {
+  background: #4f46e5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header input {
+    width: 100%;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
 }
