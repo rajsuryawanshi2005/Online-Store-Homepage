@@ -36,5 +36,4 @@ Day 4: Finalized UI, fixed bugs, optimized code, and tested responsiveness
 The project successfully meets all the requirements by delivering a clean, responsive, and interactive online store homepage. It demonstrates strong frontend development skills, API integration, and modern UI design practices, making it suitable for portfolio and resume purposes.
 
 🔗 Project Links
-Live Demo: buynest.netlify.app
-GitHub Repository: 
+Live Demo: https://buyynest.netlify.app/ 
